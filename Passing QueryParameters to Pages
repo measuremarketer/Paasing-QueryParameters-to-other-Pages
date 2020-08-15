@@ -1,0 +1,11 @@
+// written by Prashanth Reniguntala, Founder, CEO - Measure Marketer
+// want to add the query parameters to other urls of the page, on thank you page, u can send the query parameters to GA
+
+var queryString = window.location.string; // get the queryparameter
+var links = document.querySelectorAll("a[href]"); // get all href links on the page
+for (i=0; i<links.length; i++) {
+  var actualLink = links[i].href;
+  var newLinks = links[i].setAttribute("href", actualLink+window.location.search); //adding the queryparameter to actualLink in loop
+}
+
+// Only fetch links that ends with .com and not .pdf
